@@ -4,12 +4,12 @@ public class ContaBanco {
     private Integer numero;
     private String agencia;
     private String nomeCliente;
-    private BigDecimal saldo;
+    private Double saldo;
 
     public ContaBanco() {
     }
 
-    public ContaBanco(BigDecimal saldo, String nomeCliente, String agencia, Integer numero) {
+    public ContaBanco(Double saldo, String nomeCliente, String agencia, Integer numero) {
         this.saldo = saldo;
         this.nomeCliente = nomeCliente;
         this.agencia = agencia;
@@ -40,11 +40,19 @@ public class ContaBanco {
         this.nomeCliente = nomeCliente;
     }
 
-    public BigDecimal getSaldo() {
+    public Double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(BigDecimal saldo) {
+    public void setSaldo(Double saldo) {
         this.saldo = saldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Olá " + nomeCliente + ", " +
+                "obrigado por criar uma conta em nosso banco, " +
+                "sua agência é " + agencia + ", conta " + numero + " e " +
+                "seu saldo no valor de " + saldo + " já está disponível para saque!";
     }
 }
